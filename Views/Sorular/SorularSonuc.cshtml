@@ -1,0 +1,42 @@
+﻿@model SinavSonucu
+@{
+    ViewData["Title"] = "SorularSonuc";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int YanlisSayisi = Model.SoruSayisi - Model.DogruSayisi;
+    int Puan = (Model.DogruSayisi * Model.SoruSayisi);
+}
+
+<h3 class="text-capitalize text-center">Sorular</h3>
+<hr />
+
+<div class="row">
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Toplam Soru Sayısı</th>
+            <th scope="col">Doğru Sayısı</th>
+            <th scope="col">Yanlış Sayısı</th>
+            <th scope="col">Puan</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <span class="badge bg-secondary text-dark"> @Model.SoruSayisi </span>
+                </td>
+                <td>
+                    <span class="badge bg-success"> @Model.DogruSayisi </span>
+                </td>
+                <td>
+                    <span class="badge bg-danger"> @YanlisSayisi </span>
+                </td>
+                <td>
+                    <span class="badge bg-warning"> @Puan </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

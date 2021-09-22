@@ -1,0 +1,44 @@
+﻿@model Admin
+
+@{
+    Layout = null;
+
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Admin Enter</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+    <br />
+    <div class="container align-content-center">
+        <div class="row">
+            <div class="col-4"></div>
+
+            <div class="col-3  border border-info align-content-center">
+                <h3 class="card-header text-center">Admin Girişi</h3><br />
+                <form method="post" asp-area="MenegerPanel" asp-controller="Home" asp-action="Index" style="width:100%; text-align:center;">
+                    <div class="form-floating mb-1">
+                        <label for="floatingInput">Kullanıcı Adı</label>
+                        <input type="text" class="form-control" asp-for="UserName" id="UserName" placeholder="Kullanıcı Adı">
+
+                    </div>
+                    <div class="form-floating">
+                        <label for="floatingPassword">Parola</label>
+                        <input type="password" class="form-control" asp-for="Password" id="Password" placeholder="Parola">
+
+                    </div>
+                    <br />
+                    <div class="form-floating">
+                        <input type="submit" class="form-control" />
+
+                    </div>
+                </form>
+            </div>
+
+            <div class="col-4"></div>
+        </div>
+        
+    </div>
+</body>
+</html>

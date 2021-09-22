@@ -1,0 +1,71 @@
+﻿@model List<Sonuc>
+
+
+
+@{
+    ViewData["Title"] = "GetSorular";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    int sayac = 0;
+
+}
+
+<h3 class="text-capitalize text-center">Sorular</h3>
+<hr  />
+
+<div class="row">
+
+    <form method="post" asp-controller="Sorular" asp-action="GetSorular" style="width:100%; text-align:center;">
+        <div>
+            @foreach (var m in ViewBag.TempQuestion as List<Exam>)
+            {
+
+
+                <input type="hidden" asp-for="@Model[sayac].Id" value="@m.Id" />
+                <div>
+                    <label class="form-label text-black">
+                        @m.Question DCEVAP : @m.Answer
+                    </label>
+                </div>
+                <div class="form-check">
+                    
+                    @Html.RadioButtonFor(sonuc => sonuc[sayac].Answer, "A")
+                    <label class="form-check-label">
+                        A-) @m.A
+                    </label>
+                </div>
+                <div class="form-check">
+
+                    @Html.RadioButtonFor(sonuc => sonuc[sayac].Answer, "B")
+                    <label class="form-check-label">
+                        B-) @m.B
+                    </label>
+                </div>
+                <div class="form-check">
+
+                    @Html.RadioButtonFor(sonuc => sonuc[sayac].Answer, "C")
+                    <label class="form-check-label">
+                        C-) @m.C
+                    </label>
+                </div>
+                <div class="form-check">
+
+                    @Html.RadioButtonFor(sonuc => sonuc[sayac].Answer, "D")
+                    <label class="form-check-label">
+                        D-) @m.D
+                    </label>
+                </div>
+                <br />
+
+                //--------------------------------------------------------------------------
+                sayac = sayac + 1;
+
+            }
+            @{ sayac = 0; }
+
+            <input type="submit" />
+        </div>
+        </form>
+
+
+</div>

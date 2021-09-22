@@ -1,0 +1,62 @@
+﻿@model Exam
+
+@{
+    ViewData["Title"] = "Güncelleme";
+    Layout = "~/Areas/MenegerPanel/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" asp-area="MenegerPanel" asp-controller="Home" asp-action="finish" class="align-content-center">
+    <div class="align-content-center">
+        <input type="hidden" value="@Model.Id" asp-for="Id" />
+        <table border="0" align="center">
+            <tr>
+
+                <td>
+                    <label class="form-label text-black">Soru</label><br />
+                    <input class="form-text" type="text" maxlength="255" placeholder="@Model.Question" asp-for="Question" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="form-label text-black">Cevap</label><br />
+                    <input class="form-text" type="text" maxlength="1" placeholder="@Model.Answer" asp-for="Answer" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="form-label text-black">A</label><br />
+                    <input class="form-text" type="text" maxlength="25" placeholder="@Model.A" asp-for="A" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="form-label text-black">B</label><br />
+                    <input class="form-text" type="text" maxlength="255" placeholder="@Model.B" asp-for="B" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="form-label text-black">C</label><br />
+                    <input class="form-text" type="text" maxlength="255" placeholder="@Model.C" asp-for="C" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label class="form-label text-black">D</label><br />
+                    <input class="form-text" type="text" maxlength="255" placeholder="@Model.D" asp-for="D" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit" class="btn btn-warning">Güncelle</button>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</form>

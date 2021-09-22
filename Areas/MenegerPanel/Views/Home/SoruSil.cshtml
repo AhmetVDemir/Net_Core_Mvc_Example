@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewData["Title"] = "Soru Sil";
+    Layout = "~/Areas/MenegerPanel/Views/Shared/_Layout.cshtml";
+
+}
+
+<div>
+
+            @foreach (var i in ViewBag.SoruListesi as List<Exam>)
+            {
+
+                    <form method="post" asp-area="MenegerPanel" asp-controller="Home" asp-action="SoruSil">
+                        
+                        <label class="form-label">Id</label> <div class="badge bg-info">@i.Id</div>
+                        <input class="form-control" type="hidden" name="Id" value="@i.Id" /><br />
+                        <label class="form-label">Soru</label> <label class="form-control">@i.Question</label>
+
+                        <button type="submit" class="btn btn-danger">Sil</button>
+                    </form>
+                    <hr />
+                
+            }
+
+
+            
+    </div>
+
+

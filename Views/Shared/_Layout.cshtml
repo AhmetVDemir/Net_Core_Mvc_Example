@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>@ViewData["Title"] - EXC</title>
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
+            <a class="navbar-brand text-dark fw-bold" asp-controller="Home" asp-action="Index">Exam System</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link text-black" asp-controller="Home" asp-action="Index">Ana Sayfa</span></a>
+                    <a class="nav-item nav-link" asp-controller="Sorular" asp-action="GetSorular">Ehliyet Testi</a>
+                    <a class="nav-item nav-link" asp-controller="Home" asp-action="Info">Hakkımızda</a>
+                    <a class="nav-item nav-link" asp-area="MenegerPanel" asp-controller="Home" asp-action="Index">Menege(JustAdm)</a>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-4 border border-info">
+                    @await Component.InvokeAsync("SolPanel")
+                </div>
+
+                <div class="col-4 border">
+                 @RenderBody()
+                </div>
+
+                <div class="col-4 border border-warning">
+                    @await Component.InvokeAsync("SagPanel")
+                </div>
+
+            </div>
+            
+
+        </div>
+    </section>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    &copy; 2021 - EXC - AVD
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+
+
+</body>
+</html>

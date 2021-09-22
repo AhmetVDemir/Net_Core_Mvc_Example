@@ -1,0 +1,16 @@
+﻿
+@model List<Zaman>
+@{
+    Layout = null;
+}
+
+
+<div class="text-center">
+    <h3 class="card-header" >Dönemler</h3>
+
+            @foreach (var zaman in Model)
+            {
+                <a class="nav-item nav-link" asp-controller="Sorular" asp-action="GetSorular"> @zaman.Tarih   tarihine ait sorular</a>
+            }
+</div>
+   
